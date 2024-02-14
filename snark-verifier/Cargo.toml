@@ -51,7 +51,7 @@ ratatui = { version = "0.24", default-features = false, features = [
 ] }
 
 [features]
-default = ["loader_evm", "loader_halo2", "halo2-axiom", "display"]
+default = ["loader_evm", "loader_halo2", "halo2-cc", "display"]
 display = ["halo2-base/display", "halo2-ecc?/display"]
 loader_halo2 = ["halo2-ecc"]
 loader_evm = ["dep:sha3", "dep:ruint"]
@@ -60,6 +60,7 @@ parallel = ["dep:rayon"]
 # EXACTLY one of halo2-pse / halo2-axiom should always be turned on; not sure how to enforce this with Cargo
 halo2-pse = ["halo2-base/halo2-pse", "halo2-ecc?/halo2-pse"]
 halo2-axiom = ["halo2-base/halo2-axiom", "halo2-ecc?/halo2-axiom"]
+halo2-cc = ["halo2-base/halo2-cc", "halo2-ecc?/halo2-cc"]
 
 [[example]]
 name = "evm-verifier"
